@@ -1,0 +1,21 @@
+# Production profile defaults. Real environment variables ALWAYS override these.
+# Credentials are never stored here: set MME_API_KEYS (and MME_ADMIN_KEYS if runtime registration is needed) as
+# RunPod endpoint secrets/env vars.
+# Concurrency numbers are STARTING POINTS, not capacity guarantees - measure with docs/PERFORMANCE_TESTING.md.
+env:
+  MME_PROFILE: production
+  LOG_LEVEL: INFO
+  MAX_SEATS: 1               # spec default; raise only after benchmarking (upstream memory table: ~9.7 GB steady at 8 seats)
+  MAX_PENDING: 4
+  QUEUE_DEADLINE_MS: 2000    # admission control: refuse (503) instead of letting callers wait in silence
+  WS_MAX_CONTEXTS: 4
+  WS_MAX_LAG_S: 20
+  HTTP_MAX_LAG_S: 60
+  MME_MAX_WS_CONNECTIONS: 32
+  MME_MAX_BODY_BYTES: 65536
+  MME_MAX_VOICE_UPLOAD_BYTES: 8388608
+  MME_ALLOW_VOICE_REGISTRATION: 0   # prefer manifest-based persistent voices (VOICES_FILE)
+  MME_EXIT_ON_LOAD_FAILURE: 1
+  SHUTDOWN_TIMEOUT_S: 30
+  MME_INCREMENTAL: 1
+  MME_INC_IDLE_FLUSH_MS: 350

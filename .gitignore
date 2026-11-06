@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.env
+# upstream clone used for CPU tests / audit - not part of this repo
+upstream_src/
+# reference voice recordings and manifests with private data must never be committed
+voices/
+*.wav
+*.flac
+*.mp3
+*.pem
+*.key

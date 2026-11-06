@@ -1,0 +1,22 @@
+.git
+.gitignore
+.github
+.env
+.env.*
+*.env
+upstream_src/
+tests/
+docs/
+*.md
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+# reference recordings / secrets must never enter the build context
+voices/
+*.wav
+*.flac
+*.mp3
+*.pem
+*.key

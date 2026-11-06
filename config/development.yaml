@@ -1,0 +1,13 @@
+# Development profile: one synthesis seat, debug logging, strict validation. NEVER use production credentials here.
+# Auth stays ON by default; set MME_API_KEYS to a throw-away key, or MME_AUTH_DISABLED=1 for local-only runs
+# (refused in the production profile).
+env:
+  MME_PROFILE: development
+  LOG_LEVEL: DEBUG
+  MAX_SEATS: 1
+  MAX_PENDING: 2
+  QUEUE_DEADLINE_MS: 5000
+  WS_MAX_CONTEXTS: 2
+  MME_MAX_WS_CONNECTIONS: 4
+  MME_ALLOW_VOICE_REGISTRATION: 1   # needs MME_ADMIN_KEYS
+  MME_EXIT_ON_LOAD_FAILURE: 0       # keep the process up so /health shows the error

@@ -1,0 +1,15 @@
+# Direct runtime dependencies. Upstream pins copied from maya2-native pyproject.toml @ c6b3768 (torch 2.8.0+cu128,
+# triton 3.4.0 via torch, transformers 5.6.2, speechbrain 1.1.2) + aiohttp for the server.
+# requirements-lock.txt is generated from this file (see README "Regenerating the lock").
+torch==2.8.0
+torchaudio==2.8.0
+transformers==5.6.2
+tokenizers>=0.22,<0.23
+numpy>=2.0
+scipy>=1.13
+soundfile>=0.12
+speechbrain==1.1.2
+huggingface_hub>=1.0
+safetensors>=0.6
+pyyaml>=6.0
+aiohttp>=3.10

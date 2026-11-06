@@ -1,0 +1,13 @@
+# Benchmark profile: for docs/PERFORMANCE_TESTING.md runs on a rented GPU. Does not claim any concurrency level.
+# Metrics: GET /metrics (Prometheus text) or /metrics?json=1 - TTFA, RTF, audio seconds, GPU VRAM/util, queue, cancels.
+env:
+  MME_PROFILE: benchmark
+  LOG_LEVEL: INFO
+  MAX_SEATS: 16               # sweep this (1, 4, 8, 16, 32 ...) between runs; it sizes CUDA graphs + KV memory
+  MAX_PENDING: 64
+  QUEUE_DEADLINE_MS: 10000    # measure queueing instead of rejecting early
+  WS_MAX_CONTEXTS: 8
+  WS_MAX_LAG_S: 30
+  MME_MAX_WS_CONNECTIONS: 256
+  MME_ALLOW_VOICE_REGISTRATION: 0
+  MME_EXIT_ON_LOAD_FAILURE: 1
